@@ -1,4 +1,5 @@
 import Post from "./Post"
+import Container from 'react-bootstrap/Container'
 
 export const Posts= ()=> {
 
@@ -55,10 +56,10 @@ export const Posts= ()=> {
     ]
 
   return (
-    <>
+    <Container>
         { posts.length > 0 ? posts.map((post)=> {
             return <Post key={post.id} post= {post}/> 
         }) : <p>No posts to display</p> }
-    </>    
+    </Container>    
   )
 }
