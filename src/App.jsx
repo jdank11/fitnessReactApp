@@ -7,6 +7,7 @@ import Body from "./components/Body"
 import Exercise from "./components/Exercise"
 import Register from "./components/forms/Register"
 import Workout from "./components/forms/Workout"
+import Users from "./components/Users"
 
 
 export default function App(){
@@ -16,11 +17,11 @@ export default function App(){
   	<Container fluid data-bs-theme = 'dark' className='app'>
       <Header />
       <Body>
-        <Posts/>
-        <Exercise/>
-      
+        {/* <Posts/>
+        <Exercise/> */}
+        <Users/>
         <Register/>
-        <Workout/>
+        {/* <Workout/> */}
       </Body>
 
  	</Container> 
