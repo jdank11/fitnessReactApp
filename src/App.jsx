@@ -19,8 +19,8 @@ export default function App(){
       <Body>
         {/* <Posts/>
         <Exercise/> */}
-        <Users/>
-        <Register/>
+        <Users />
+        {/* <Register/> */}
         {/* <Workout/> */}
       </Body>
 
