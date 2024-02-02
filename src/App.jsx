@@ -8,6 +8,10 @@ import Exercise from "./components/Exercise"
 import Register from "./components/forms/Register"
 import Workout from "./components/forms/Workout"
 import Users from "./components/Users"
+import SocialPage from './pages/SocialPage'
+import FormPage from './pages/FormPage'
+import LandingPage from './pages/LandingPage'
+import Login from './components/forms/Login'
 
 
 export default function App(){
@@ -16,13 +20,12 @@ export default function App(){
   return (
   	<Container fluid data-bs-theme = 'dark' className='app'>
       <Header />
-      <Body>
-        {/* <Posts/>
-        <Exercise/> */}
-        <Users />
-        {/* <Register/> */}
-        {/* <Workout/> */}
-      </Body>
+
+      <FormPage>
+        <Login />
+      </FormPage>
+
+      
 
  	</Container> 
   )
