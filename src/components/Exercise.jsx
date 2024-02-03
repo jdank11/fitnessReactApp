@@ -22,10 +22,11 @@ export default function Exercise() {
     }
 
   return (
-    <Container>
+    <Container id='exercise'>
+        <h1>Mindset is Everything</h1>
         <h3>Exercise of the Day</h3>
         <p>Exercise: {performingExercise}</p>
-        <button onClick={randomExercise}>Spin The Wheel</button>
+        <button id='spinthewheel' onClick={randomExercise}>Spin The Wheel</button>
     </Container>
   )
 

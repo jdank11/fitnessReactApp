@@ -1,6 +1,6 @@
 .app{
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   min-height: 900px ;
   padding: 0;
 }
@@ -36,4 +36,22 @@
 
 .sidebar .nav-item .active {
   background-color: #def;
+}
+
+#exercise{
+  margin-left: 25%;
+  align-items: center;
+  color: black;
+  
+}
+#spinthewheel{
+  color: red;
+  margin-left: 25%;
+}
+#spinthewheel:hover{
+  color: orange;
+}
+#workoutpost{
+  margin-left: 40%;
+  align-items: center;
 }

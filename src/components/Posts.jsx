@@ -1,59 +1,22 @@
-import Post from "./Post"
+import { useState } from "react"
+import Post from "./SinglePost"
 import Container from 'react-bootstrap/Container'
 
 export const Posts= ()=> {
 
-    const posts = [
-        {
-            "body": "Post 1",
-            "id": "1",
-            "timestamp": "2024-01-03T00:35:27.568774",
-            "user": {
-                "email": "jdo1@gmail.com",
-                "first_name": null,
-                "id": "1",
-                "last_name": null,
-                "username": "jdo1"
+    const [ posts, setPosts ] = useState([])
+
+    useState( ()=>{
+        (async ()=>{
+            const res = await fetch('http://127.0.0.1:5000/post')
+            if(res.ok){
+                const data = await res.json()
+                setPosts(data);
+                return
             }
-        },
-        {
-            "body": "Post 2",
-            "id": "2",
-            "timestamp": "2024-01-03T00:35:27.568774",
-            "user": {
-                "email": "jdo2@gmail.com",
-                "first_name": null,
-                "id": "2",
-                "last_name": null,
-                "username": "jdo2"
-            }
-        },
-        {
-            "body": "Post 3",
-            "id": "3",
-            "timestamp": "2024-01-03T00:35:27.568774",
-            "user": {
-                "email": "jdo3@gmail.com",
-                "first_name": null,
-                "id": "3",
-                "last_name": null,
-                "username": "jdo3"
-            }
-        },
-        {
-            "body": "Post 4",
-            "id": "4",
-            "timestamp": "2024-01-03T00:35:27.568774",
-            "user": {
-                "email": "jdo4@gmail.com",
-                "first_name": null,
-                "id": "4",
-                "last_name": null,
-                "username": "jdo4"
-            }
-    
-        }
-    ]
+            console.error('Failed to get posts')
+        })()
+    },[])
 
   return (
     <Container>
