@@ -1,6 +1,6 @@
 
 
-export default function Post({ post }){
+export default function SinglePost({ post }){
     
     return (
         <p>
