@@ -28,14 +28,15 @@ export default function Register() {
             <h3>Register</h3>
             <form action="" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label><br />
-                <input type="text" name='username' value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })}  required /><br />
+                <input type="text" name='username' value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })}  required/><br />
                 <label htmlFor="email">Email</label><br />
-                <input type="email" name='email' value={user.email} onChange={(e)=> setUser({...user, email: e.target.value})} required /><br />
+                <input type="email" name='email' value={user.email} onChange={(e)=> setUser({...user, email: e.target.value})} required/><br />
                 <label htmlFor="password">Password</label><br />
-                <input type="password" name='password' value={user.password} onChange={(e)=> setUser({...user, password: e.target.value})} required /><br />
-                <input type="Submit" value={'Register'}/>
+                <input type="password" name='password' value={user.password} onChange={(e)=> setUser({...user, password: e.target.value})} required/><br />
+                <input type="submit" value={'Register'}/>
             </form>
         </>
     )
 
 }
+

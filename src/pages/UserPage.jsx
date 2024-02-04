@@ -8,7 +8,7 @@ export default function UserPage() {
     const [user, setUser] = useState(null)
 
     const {username} = useParams()
-    console.log(username, 'Params')
+    console.log(username, 'params')
 
     useEffect(()=>{
         (async ()=> {
@@ -16,8 +16,8 @@ export default function UserPage() {
             if(res.ok){
                 const data = await res.json()
                 console.log(data)
-                const {username, post} = data
-                setUser({username, post})
+                const {username, posts} = data
+                setUser({username, posts})
             }
         })()
     }, [])
@@ -25,8 +25,12 @@ export default function UserPage() {
     if(!user) return <Spinner/>
 
   return (
-    <h2>{user.username}</h2>
+    <>
+        <h2>{user.username}</h2>
+        {user.posts.map( (post)=> {
+            return <p key={post.id}>{post.body} <small>{post.timestamp}</small></p>
+        })}
 
-    
+    </>
   )
 }

@@ -16,16 +16,17 @@ import LandingPage from './pages/LandingPage'
 import UserPage from './pages/UserPage'
 import Login from './components/forms/Login'
 import { Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
 
 export default function App(){
 
-  const [user, setUser] = useState({ username: '', password: '', token: '' })
+  const [user, setUser] = useState({ username: '', password: '', token: '', followed: '' })
   
 
 
-  function updateUser({ username, password, token }) {
-    setUser({ username, password, token })
+  function updateUser({ username, password, token, followed }) {
+    setUser({ username, password, token, followed})
   }
 
 
@@ -48,7 +49,7 @@ export default function App(){
         </FormPage>} />
 
         <Route path='/users' element={<SocialPage>
-          <Users />
+          <Users user={user} />
         </SocialPage>} />
         
         <Route path='/posts' element={<SocialPage>
@@ -58,6 +59,7 @@ export default function App(){
         <Route path='/user/:username' element={<UserPage />} />
 
       </Routes>
+      <ToastContainer />
 
     </Container>
   )
