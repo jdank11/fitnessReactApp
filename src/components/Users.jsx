@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import Spinner from 'react-bootstrap/Spinner'
+import { UserContext } from "../contexts/UserContext"
 
-export default function Users({ user: loggedUser }) {
+export default function Users() {
 
-    console.log(loggedUser, 'from users page')
+    const { user: loggedUser } = useContext(UserContext)
+    
     const [ users, setUser ] = useState([])
     
     useEffect(()=>{

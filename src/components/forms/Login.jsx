@@ -1,29 +1,35 @@
-import { useEffect, useState } from "react"
+import { useState, useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify'
+import { UserContext } from "../../contexts/UserContext"
 
-export default function Login({ updateUser }) {
+
+
+export default function Login() {
     
     const [ isLogging, setIsLogging ] = useState(false)
     const [user, setUser] = useState({ username: '', password: '', token: '' })
     
+    const { updateUser, user: userState, updateLocalStorage } = useContext(UserContext)
     const navigate = useNavigate()
 
     if( isLogging ){
         loginUser()
     }
 
-    // useEffect(()=>{
-    //     if(user.id){
-    //         navigate('/')
-    //     }
-    // },[])
+    useEffect(() => {
+        if (userState.username) {
+            updateUserLocalStorage()
+            navigate('/')
+            return
+        }
+    }, [updateUser])
+
 
     async function getUser(username){
         const res = await fetch('http://127.0.0.1:5000/user/'.concat(username))
         if(res.ok){
             const data = await res.json()
-            console.log(data)
             return data
         }
     }
@@ -39,7 +45,6 @@ export default function Login({ updateUser }) {
             const data = await res.json()
             console.log(data, 'from login')
             if(data.token){
-                
                 toast.success(user.username.concat(' logged In!'))
                 const userData = await getUser(user.username)
                 updateUser({ token: data.token, username: user.username, followed: userData.followed})
@@ -56,7 +61,6 @@ export default function Login({ updateUser }) {
         e.preventDefault()
         const loginElement = e.currentTarget
         const loginForm = new FormData(loginElement)
-        console.log(loginForm.get('username'));
         setUser(
             Object.fromEntries(loginForm)
         )

@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom"
-import Body from "../components/Body"
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
 

@@ -55,3 +55,8 @@
   margin-left: 40%;
   align-items: center;
 }
+.center-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

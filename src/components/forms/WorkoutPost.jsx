@@ -1,7 +1,9 @@
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
+import { UserContext } from "../../contexts/UserContext"
 
-export default function Post( { user }) {
+export default function Post() {
 
+    const { user } = useContext(UserContext)
     const postInputRef = useRef(null)
     
     async function sendPost( postData ){
@@ -12,6 +14,7 @@ export default function Post( { user }) {
           Authorization: `Bearer ${user.token}`
         },
         body: JSON.stringify({body: postData})
+        //, exercise: postData, weight: postData, reps:postData
       })
       if(res.ok){
         const data = await res.json()
@@ -32,11 +35,11 @@ export default function Post( { user }) {
     <div id='workoutpost'>
         <h3>Log Workout</h3>
         <form action="" onSubmit={handleSubmit}>
-            <label htmlFor="title">Exercise</label><br />
+            <label htmlFor="exercise">Exercise</label><br />
             <input type="text" name='workoutName' ref={postInputRef} /><br />
-            <label htmlFor="workout">Weight</label><br />
+            <label htmlFor="weight">Weight</label><br />
             <input type="text" name='workoutWeight' ref={postInputRef} /><br />
-            <label htmlFor="weight">Reps</label><br />
+            <label htmlFor="reps">Reps</label><br />
             <input type="text" name='workoutReps' ref={postInputRef} /><br />
             <input type="submit" value='Post'/>
         </form>
