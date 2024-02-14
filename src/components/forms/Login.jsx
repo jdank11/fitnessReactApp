@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify'
 import { UserContext } from "../../contexts/UserContext"
 
+import lionstraight from "../../assets/lionstraight.png"
 
 
 export default function Login() {
@@ -68,15 +69,18 @@ export default function Login() {
     }
 
     return (
-        <>
-            <h3>Login</h3>
-            <form action="" id='login-form' onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label><br />
-                <input type="text" name='username'/><br />
-                <label htmlFor="password">Password</label><br />
-                <input type="password" name={'password'} /><br />
-                <input type="submit" value={'Login'} />
-            </form>
-        </>
+        <div className="loginbg">
+            <div className='loginbox' sx={{ gap: { lg: '380px', xs: '30px' }, mb:"50px", justifyContent: 'none' }}>
+                <h3 className="logintitle">Login</h3>
+        
+                <form action="" id='login-form' onSubmit={handleSubmit}>
+                    <label htmlFor="username">Username</label><br />
+                    <input type="text" name='username'/><br />
+                    <label htmlFor="password">Password</label><br />
+                    <input type="password" name={'password'} /><br />
+                    <input type="submit" value={'Login'} />
+                </form>
+            </div>
+        </div>
     )
 }

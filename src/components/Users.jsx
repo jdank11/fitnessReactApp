@@ -1,6 +1,8 @@
 import { useEffect, useState, useContext } from "react"
 import Spinner from 'react-bootstrap/Spinner'
 import { UserContext } from "../contexts/UserContext"
+import { Container } from "react-bootstrap"
+
 
 export default function Users() {
 
@@ -36,6 +38,8 @@ export default function Users() {
             console.log(data)
             
         }
+        
+       
     }
 
     async function unfollowUser(followerId){
@@ -51,22 +55,31 @@ export default function Users() {
             console.log(data)
             
         }
+        
+        
     }
 
+    
+
     return (
-    <>
+    <div className="users" >
+
         { users.map(user => {
             if (user.username !== loggedUser.username){
-            return <div key={user.id}>
+            return <div className='usersbox' key={user.id}>
                     <p> {user.username}</p>
+                    
+                
                     { loggedUser.followed.hasOwnProperty(user.id) ?
-                    <button onClick={()=> unfollowUser(user.id)}>Unfollow</button> :
-                    <button onClick={()=> followUser(user.id)}>Follow</button>
-                }
+                    <button className='unfollowbutton' onClick={()=> unfollowUser(user.id)}>Unfollow</button> :
+                    <button className='followbutton' onClick={()=> followUser(user.id)}>Follow</button>
+                    }
+                    
+    
                     
                 </div>
             }    
         })}
-    </>
+    </div>
   )
-}
+}      

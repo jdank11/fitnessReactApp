@@ -24,8 +24,8 @@ export default function Register() {
     }
 
     return (
-        <>
-            <h3>Register</h3>
+        <div className="registerbox" sx={{ gap: { lg: '380px', xs: '30px' }, mb:"50px", justifyContent: 'none' }}>
+            <h3 className="registertitle">Register</h3>
             <form action="" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label><br />
                 <input type="text" name='username' value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })}  required/><br />
@@ -35,7 +35,7 @@ export default function Register() {
                 <input type="password" name='password' value={user.password} onChange={(e)=> setUser({...user, password: e.target.value})} required/><br />
                 <input type="submit" value={'Register'}/>
             </form>
-        </>
+        </div>
     )
 
 }
