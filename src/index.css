@@ -1,12 +1,13 @@
 .app{
   background-color: white;
   color: black;
-  min-height: 900px ;
+  min-height: 100vh ;
   padding: 0;
 }
 
-.header {
-  border-bottom: 1px solid #ddd;
+
+.header:hover{
+  color: grey;
 }
 
 .sidebar {
@@ -46,17 +47,223 @@
 }
 #spinthewheel{
   color: red;
-  margin-left: 25%;
+
+  margin-left: 15%;
 }
 #spinthewheel:hover{
   color: orange;
 }
-#workoutpost{
-  margin-left: 40%;
-  align-items: center;
+
+.unfollowbutton:hover{
+  color: red;
 }
-.center-content{
+.unfollowbutton{
+  background-color: grey;
+  color: orange;
+
+}
+.followbutton{
+  background-color: orange;
+  color: white;
+
+}
+
+.followbutton:hover{
+  color: green;
+}
+#qotd{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 5px 5px 10px grey;
+  
+}
+.mindset{
+  color: darkorange;
+  font-size: 75px;
+  padding-bottom: 20px;
+  text-shadow: 2px 5px 5px black;
+}
+.quote{
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  display: flex;
+  text-align: center;
+
+}
+.author{
+  font-family: 'Lobster', cursive;
+}
+#inspirebutton{
+  margin-top: 10px; 
+  text-decoration: none;
+  width: 150px; 
+  text-align: center; 
+  background-color:darkorange ;
+  padding: 5px;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+  text-shadow: 2px 2px 5px black;
+}
+#inspirebutton:hover{
+  color: black;
+}
+.searchbox{
+  position: relative;
+  margin-bottom: 72px;
+
+}
+.searchfield{
+  height: 76px;
+}
+.searchbutton:hover{
+  color: red;
+}
+.exercisebox{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+#exercises{
+  margin-top: 100px;
+  padding: 20px;
+}
+#showresults{
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.users{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  text-transform: capitalize;
+  background-color: grey;
+  border-radius: 10px;
+  padding: 50px;
+  font-size: 20px;
+  
+
+}
+.usersbox{
+   border-style: solid;
+   background-color: white;
+   padding: 25px;
+   border-radius: 20px;
+   box-shadow: 2px 2px 5px orange;
+}
+.postsbox{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  text-transform: capitalize;
+  border-radius: 5px; 
+  padding: 10px;
+}
+.posts{
+  border-radius: 10px;
+  background-color: orange;
+  padding: 20px;
+  display: grid;
+  flex-direction:column;
+  padding-left: 35px;
+  border: solid black;
+  padding-right: 60px;
+  box-shadow: 2px 2px 20px grey;
+
+}
+.socialpage{
+  display: flex;
+  flex-direction: row;
+  
+}
+#favebtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: right;
+  border: solid 1px red;
+  
+}
+#favebtn:hover{
+  background-color: white;
+}
+.registerbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  background-image: url("./assets/lionside.png");
+  height: 850px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  padding: 100px;
+  color: white;
+}
+.registertitle{
+  font-size: 40px;
+}
+.loginbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  padding: 100px;
+  color: white;
+  
+}
+.logintitle{
+  font-size: 40px;
+
+}
+.loginbg{
+  background-image: url("./assets/lionstraight.png");
+  height: 850px;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  
+
+}
+.postbtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.userspage{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  text-transform: capitalize;
+  border-radius: 10px; 
+  padding: 10px;
+  background-color: grey;
+}
+.userspost{
+  
+  background-color: orange;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+  
+}
+.userheader{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 75px;
+  color: black;
+  text-decoration: underline white;
+  text-shadow: 2px 2px 5px orange;
 }

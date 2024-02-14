@@ -24,12 +24,19 @@ export default function UserPage() {
     if(!user) return <Spinner/>
 
   return (
-    <>
-        <h2>{user.username}</h2>
+    <div className="userspage">
+        <h2 className='userheader'>{user.username}</h2>
         {user.posts.map( (post)=> {
-            return <p key={post.id}>{post.body} <small>{post.timestamp}</small></p>
+            return <p key={post.id} className="userspost">Workout:
+                        
+                        <li>Exercise: {post.exercise}</li>
+                        <li>Weight: {post.weight}</li>
+                        <li>Reps: {post.reps}</li>
+                        <li>Notes: {post.notes}</li>
+                        
+                    </p>
         })}
 
-    </>
+    </div>
   )
 }

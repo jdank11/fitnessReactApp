@@ -1,33 +1,25 @@
-import { useState } from 'react'
 
-import Container from 'react-bootstrap/Container'
+import { Box, Stack} from '@mui/material'
 
-export default function Exercise() {
-    
-    const [ performingExercise, setPerformingExercise ] = useState('')
+import ExerciseCard from './ExerciseCard'
 
-    const exercises = [
-        'curls',
-        'bench',
-        'squat',
-        'pull-ups',
-        'deadlift',
-        'rows',
-        'lunges', 
-        'crunches'
-    ]
-    
-    function randomExercise(){
-        setPerformingExercise( exercises[Math.floor(Math.random() * exercises.length)] )
-    }
+const Exercise = ({ exercises }) => {
 
+
+  console.log(exercises)
+  
   return (
-    <Container id='exercise'>
-        <h1>Mindset is Everything</h1>
-        <h3>Exercise of the Day</h3>
-        <p>Exercise: {performingExercise}</p>
-        <button id='spinthewheel' onClick={randomExercise}>Spin The Wheel</button>
-    </Container>
-  )
+    <Box id="exercises" >
+      <h3 id="showresults">Showing Results</h3>
+      <Stack direction="row" sx={{ gap: { lg: '107px', xs: '50px' } }} flexWrap="wrap" justifyContent="center">
+        {exercises.map((exercise, _index) => (
+          <ExerciseCard key={_index} exercise={exercise} />
+        ))}
+      </Stack>
 
+      
+    </Box>
+  )
 }
+
+export default Exercise

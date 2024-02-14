@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import {Posts} from "./components/Posts"
 import WorkoutPost from './components/forms/WorkoutPost'
 import Exercise from "./components/Exercise"
+import QOTD from "./components/QOTD"
 import Register from "./components/forms/Register"
 import Users from "./components/Users"
 import SocialPage from './pages/SocialPage'
@@ -18,17 +19,17 @@ import { ToastContainer } from 'react-toastify'
 import Logout from './components/Logout'
 
 
+
 export default function App(){
 
 
   return (
     <Container fluid data-bs-theme='dark' className='app'>
-      <Header />
-      <WorkoutPost />
+      <Header  />
       
       <Routes>
         <Route path='/' element={<LandingPage>
-          <Exercise/>
+          <QOTD/>
         </LandingPage>} />
 
         <Route path='/login' element={<FormPage>
@@ -43,9 +44,15 @@ export default function App(){
           <Users />
         </SocialPage>} />
         
-        <Route path='/posts' element={<SocialPage>
-            <Posts />
-        </SocialPage>} />
+        <Route path='/posts' 
+          element={
+            <SocialPage>
+              
+              <div className='socialpage'>
+                <WorkoutPost />
+                <Posts />
+              </div>  
+            </SocialPage>} />
         
         <Route path='/user/:username' element={<UserPage />} />
         <Route path='logout' element={<Logout/>} />
