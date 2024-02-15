@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container'
 import Header from "./components/Header"
 import {Posts} from "./components/Posts"
 import WorkoutPost from './components/forms/WorkoutPost'
-import Exercise from "./components/Exercise"
 import QOTD from "./components/QOTD"
 import Register from "./components/forms/Register"
 import Users from "./components/Users"

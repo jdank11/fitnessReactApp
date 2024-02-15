@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify'
 import { UserContext } from "../../contexts/UserContext"
 
-import lionstraight from "../../assets/lionstraight.png"
-
 
 export default function Login() {
     

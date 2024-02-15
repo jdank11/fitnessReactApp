@@ -10,7 +10,7 @@ export default function LandingPage() {
   const [bodyPart, setBodyPart] = useState('All Body Parts:')
 
   return (
-    <Body sidebar={true}>
+    <Body >
         
         <QOTD />
         <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart = {setBodyPart}/>
